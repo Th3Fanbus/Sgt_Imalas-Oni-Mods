@@ -15,7 +15,7 @@ namespace Cryopod
         {
             return openChore != null;
         }
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             
             base.OnPrefabInit();

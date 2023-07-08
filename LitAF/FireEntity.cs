@@ -9,7 +9,7 @@ namespace LitAF
     public class FireEntity : StateMachineComponent<FireEntity.StatesInstance>, ISlicedSim1000ms
     {
         private int cell;
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             smi.StartSM();
             SlicedUpdaterSim1000ms<FireEntity>.instance.RegisterUpdate1000ms(this);

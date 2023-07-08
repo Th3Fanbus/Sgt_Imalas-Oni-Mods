@@ -27,13 +27,13 @@ namespace Rockets_TinyYetBig.Behaviours
         };
         private static readonly EventSystem.IntraObjectHandler<ModuleSolarPanelAdjustable> OnActiveChangedDelegate = new EventSystem.IntraObjectHandler<ModuleSolarPanelAdjustable>((System.Action<ModuleSolarPanelAdjustable, object>)((component, data) => component.OnActiveChanged(data)));
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             this.IsVirtual = true;
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             this.VirtualCircuitKey = (object)this.GetComponent<RocketModuleCluster>().CraftInterface;
             base.OnSpawn();
@@ -53,7 +53,7 @@ namespace Rockets_TinyYetBig.Behaviours
             this.meter.gameObject.GetComponent<KBatchedAnimTracker>().matchParentOffset = true;
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             this.smi.StopSM("cleanup");
             Game.Instance.accumulators.Remove(this.accumulator);

@@ -18,7 +18,7 @@ namespace CrittersShedFurOnBrush
         [Serialize]
         Color32 FurColor;
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             //if(OriginCritter!=null)
             //    FurColor = GiveFurColourForCritter(OriginCritter);

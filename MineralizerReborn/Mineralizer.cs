@@ -12,12 +12,12 @@ namespace MineralizerReborn
         public MeterController salt_meter { get; private set; }
         public Mineralizer() { }
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             smi.StartSM();

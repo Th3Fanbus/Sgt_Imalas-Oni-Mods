@@ -16,11 +16,11 @@ namespace SaveGameModLoader
         public ModListScreen parent;
         public bool ExportToFile = true;
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
         }
-        public override void OnActivate()
+        protected override void OnActivate()
         {
 #if DEBUG
             //SgtLogger.log("StoreModPackScreen:");

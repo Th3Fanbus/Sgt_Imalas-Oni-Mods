@@ -21,7 +21,7 @@ namespace RoboRockets.LearningBrain
 
         
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             if(gameObject.TryGetComponent<KPrefabID>(out var prefab))

@@ -26,7 +26,7 @@ namespace Rockets_TinyYetBig.NonRocketBuildings
         bool[] LaunchSignalBits = null;
 
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
 

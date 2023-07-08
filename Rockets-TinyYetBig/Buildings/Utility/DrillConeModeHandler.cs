@@ -21,7 +21,7 @@ namespace Rockets_TinyYetBig.Buildings.Utility
 
         public string SidescreenButtonTooltip => "toggle between automatic and manual loading";//TODO LOC
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn(); 
             if (gameObject.TryGetComponent<ManualDeliveryKG>(out var deliveryKG))
@@ -30,7 +30,7 @@ namespace Rockets_TinyYetBig.Buildings.Utility
             }
             ToggleBetweenAutoAndManual();
         }
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             base.OnCleanUp();
         }

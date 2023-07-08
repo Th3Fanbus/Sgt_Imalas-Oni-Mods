@@ -207,7 +207,7 @@ namespace LaserMeteorBlasterCannon
                 base.StartSM();
             }
 
-            public override void OnCleanUp()
+            protected override void OnCleanUp()
             {
                 base.OnCleanUp();
             }

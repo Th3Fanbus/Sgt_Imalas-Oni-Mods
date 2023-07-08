@@ -27,7 +27,7 @@ namespace BawoonFwiend
 
         public BawoongiverWorkable() => this.SetReportType(ReportManager.ReportType.PersonalTime);
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             this.overrideAnims = new KAnimFile[1]

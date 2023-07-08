@@ -101,7 +101,7 @@ namespace ShockWormMob
 
         private List<GameObject> hogs;
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             RestoreHogsList();
             base.OnPrefabInit();
@@ -192,7 +192,7 @@ namespace ShockWormMob
             Util.KDestroyGameObject(base.gameObject);
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             base.smi.StartSM();

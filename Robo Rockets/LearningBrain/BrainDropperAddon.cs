@@ -15,7 +15,7 @@ namespace RoboRockets.LearningBrain
         [Serialize]
         public bool BrainDropsResources = false;
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             GameObject go = Util.KInstantiate(Assets.GetPrefab(BrainConfig.ID));
             if(go.TryGetComponent<DemolishableDroppable>(out var dropper))

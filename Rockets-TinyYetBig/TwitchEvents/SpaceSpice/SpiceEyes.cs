@@ -25,7 +25,7 @@ namespace Rockets_TinyYetBig.TwitchEvents.SpaceSpice
 
         [Serialize]
         public float SpiceEyesDuration = -100;
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
 

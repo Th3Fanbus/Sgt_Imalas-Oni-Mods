@@ -12,7 +12,7 @@ namespace UtilLibs.UIcmp //Source: Aki
         [MyCmpReq]
         private LocText text;
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             text.alignment = alignment;

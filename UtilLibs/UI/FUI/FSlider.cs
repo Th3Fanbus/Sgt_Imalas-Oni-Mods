@@ -25,7 +25,7 @@ namespace UtilLibs.UIcmp //Source: Aki
         public int TrailingOutputNumbers = 3;
         public bool WholeNumbers => wholeNumbers;
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             slider = gameObject.GetComponent<Slider>();

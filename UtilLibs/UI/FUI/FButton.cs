@@ -33,7 +33,7 @@ namespace UtilLibs.UIcmp //Source: Aki
         public Color hoverColor = new Color(0.345f, 0.373f, 0.702f);
 
         public bool allowRightClick = false;
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             if(image ==null && button != null)

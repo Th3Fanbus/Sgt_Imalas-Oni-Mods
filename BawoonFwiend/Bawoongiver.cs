@@ -338,7 +338,7 @@ namespace BawoonFwiend
             fn = (ref Chore.Precondition.Context context, object data) => !(context.consumerState.consumer == null) && !context.consumerState.gameObject.GetComponent<Effects>().HasEffect("HasBalloon")
         };
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
 
             base.OnSpawn();
@@ -347,7 +347,7 @@ namespace BawoonFwiend
             //OverwriteSymbol();
         }
 
-        public override void OnCleanUp() => base.OnCleanUp();
+        protected override void OnCleanUp() => base.OnCleanUp();
 
         private void AddRequirementDesc(List<Descriptor> descs, Tag tag, float mass)
         {

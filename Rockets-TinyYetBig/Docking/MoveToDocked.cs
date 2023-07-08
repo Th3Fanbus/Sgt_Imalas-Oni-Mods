@@ -21,7 +21,7 @@ namespace Rockets_TinyYetBig.Docking
         public NavTeleporter port;
 
         private Chore MoveChore;
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             this.assignable.OnAssign += new System.Action<IAssignableIdentity>(this.Assign);

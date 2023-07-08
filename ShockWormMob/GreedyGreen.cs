@@ -110,7 +110,7 @@
 
 //	private List<int> OccupiedCells = new List<int>();
 
-//	public override void OnPrefabInit()
+//	protected override void OnPrefabInit()
 //	{
 //		base.OnPrefabInit();
 //		for (int i = 0; i < 7; i++)
@@ -123,7 +123,7 @@
 //		}
 //	}
 
-//	public override void OnSpawn()
+//	protected override void OnSpawn()
 //	{
 //		base.OnSpawn();
 //		base.smi.StartSM();

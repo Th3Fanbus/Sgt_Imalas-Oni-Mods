@@ -35,7 +35,7 @@ namespace Util_TwitchIntegrationLib.Scripts
             overrideTemperature = true;
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
 

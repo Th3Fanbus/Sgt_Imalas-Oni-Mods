@@ -34,7 +34,7 @@ namespace ClothingLockerMod
         public int maxPossiblyRemoved;
         private static readonly EventSystem.IntraObjectHandler<PillDispenser> OnStorageChangeDelegate = new EventSystem.IntraObjectHandler<PillDispenser>((component, data) => component.OnStorageChange(data));
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             this.gameObject.FindOrAddComponent<Workable>();
@@ -44,7 +44,7 @@ namespace ClothingLockerMod
         {
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             this.smi.StartSM();
@@ -64,7 +64,7 @@ namespace ClothingLockerMod
             this.OnDirectionChanged(directionControl.allowedDirection);
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             Components.BasicBuildings.Remove(this);
             //Components.PillDispensers.Remove(this);
@@ -197,13 +197,13 @@ namespace ClothingLockerMod
         public class PopPillWorkable : Workable, IGameObjectEffectDescriptor
         {
             MedicinalPill currentPill;
-            public override void OnPrefabInit()
+            protected override void OnPrefabInit()
             {
                 base.OnPrefabInit();
                 this.resetProgressOnStop = true;
                 this.shouldTransferDiseaseWithWorker = false;
             }
-            public override void OnSpawn()
+            protected override void OnSpawn()
             {
                 base.OnSpawn();
                 showProgressBar = false;

@@ -10,12 +10,12 @@ namespace ShockWormMob
 {
     internal class TestEventSpawner : KMonoBehaviour,ISingleSliderControl, ISidescreenButtonControl
     {
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
 
         }
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
 

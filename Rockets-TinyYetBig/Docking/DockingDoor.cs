@@ -138,7 +138,7 @@ namespace Rockets_TinyYetBig.Behaviours
             return Grid.OffsetCell(Grid.PosToCell(this), GetRotatedOffset());
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             //dManager = ModAssets.Dockables.Items.Find(item => item.GetWorldId() == worldId);//GetRocket().GetComponent<DockingdManager>();
@@ -168,7 +168,7 @@ namespace Rockets_TinyYetBig.Behaviours
             }
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             dManager.RemoveDoor(this);
             base.OnCleanUp();

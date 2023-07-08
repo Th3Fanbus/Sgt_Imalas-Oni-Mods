@@ -27,7 +27,7 @@ namespace NeuralVaccilatorExpanded
         public static string effectID = "NVE_ThoughtfullChatter";
 
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             this.GetComponent<KPrefabID>().AddTag(GameTags.AlwaysConverse);
             this.Subscribe((int)GameHashes.StartedTalking, new System.Action<object>(this.OnStartedTalking));

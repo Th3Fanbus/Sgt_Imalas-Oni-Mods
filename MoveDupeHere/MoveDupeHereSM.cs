@@ -38,7 +38,7 @@ namespace MoveDupeHere
             return proxy;
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             assignable.OnAssign += new System.Action<IAssignableIdentity>(this.RedoAssignment);
             base.OnSpawn();
@@ -62,7 +62,7 @@ namespace MoveDupeHere
             smi.GoTo(smi.sm.Idle);
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             base.OnCleanUp();
         }

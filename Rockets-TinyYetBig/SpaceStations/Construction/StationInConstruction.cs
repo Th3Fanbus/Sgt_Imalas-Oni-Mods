@@ -31,7 +31,7 @@ namespace Rockets_TinyYetBig.SpaceStations.Construction
                // symbolSwapSymbol = this.clusterAnimSymbolSwapSymbol
             }
         };
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
         }
@@ -54,12 +54,12 @@ namespace Rockets_TinyYetBig.SpaceStations.Construction
 
         }
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             base.OnCleanUp();
         }

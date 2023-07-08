@@ -19,15 +19,15 @@
 	<ItemGroup>
 		<Reference Include="Assembly-CSharp">
       <!--Publicizer Path, use the path below if you dont use that/have no idea what that is-->
-      <HintPath>$(SolutionDir)/PublicisedAssembly/Assembly-CSharp_public.dll</HintPath>
-      <!--<HintPath>$(GameLibsFolder)/Assembly-CSharp.dll</HintPath>-->
+      <!--<HintPath>$(SolutionDir)/PublicisedAssembly/Assembly-CSharp_public.dll</HintPath>-->
+      <HintPath>$(GameLibsFolder)/Assembly-CSharp.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="Assembly-CSharp-firstpass">
       <!--Publicizer Path, use the path below if you dont use that/have no idea what that is-->
-      <HintPath>$(SolutionDir)/PublicisedAssembly/Assembly-CSharp-firstpass_public.dll</HintPath>
+      <!--<HintPath>$(SolutionDir)/PublicisedAssembly/Assembly-CSharp-firstpass_public.dll</HintPath>-->
       <!--Regular Path, uncomment if you dont use publicizer /have no idea what that is-->
-      <!--<HintPath>$(GameLibsFolder)/Assembly-CSharp-firstpass.dll</HintPath>-->
+      <HintPath>$(GameLibsFolder)/Assembly-CSharp-firstpass.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="0Harmony">

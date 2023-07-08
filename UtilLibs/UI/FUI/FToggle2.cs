@@ -29,7 +29,7 @@ namespace UtilLibs.UIcmp //Source: Aki
             }
         }
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
 
@@ -41,7 +41,7 @@ namespace UtilLibs.UIcmp //Source: Aki
             mark = transform.Find(path).GetComponent<Image>();
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
         }

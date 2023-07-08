@@ -30,7 +30,7 @@ namespace Rockets_TinyYetBig.Elements
 
         private Gradient rainbowGradient;
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             Instance = this;
@@ -86,7 +86,7 @@ namespace Rockets_TinyYetBig.Elements
             }
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             base.OnCleanUp();
             Instance = null;

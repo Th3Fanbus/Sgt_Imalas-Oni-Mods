@@ -90,7 +90,7 @@ namespace DailyRoutine
             }
         }
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
            // Debug.Log("Cmp Initialized");

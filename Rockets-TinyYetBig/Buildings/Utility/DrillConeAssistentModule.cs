@@ -35,7 +35,7 @@ namespace Rockets_TinyYetBig.Buildings.Utility
             }
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             CheckTarget();

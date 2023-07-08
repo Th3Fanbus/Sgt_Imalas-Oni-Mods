@@ -19,7 +19,7 @@ namespace SetStartDupes
         List<Transform> StuffToActivate = new List<Transform>();
         [MyCmpGet]
         MinionBrowserScreen minionSelectionScreen;
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
 
@@ -101,7 +101,7 @@ namespace SetStartDupes
             MinionBrowserScreenConfig.Personalities(startingStats.personality).ApplyAndOpenScreen();
             instance.InitUI(container, startingStats);
         }
-        public override void OnShow(bool show)
+        protected override void OnShow(bool show)
         {
             if (!show)
             {

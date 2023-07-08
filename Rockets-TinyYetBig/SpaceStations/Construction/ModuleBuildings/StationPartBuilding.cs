@@ -44,13 +44,13 @@ namespace Rockets_TinyYetBig.SpaceStations.Construction.ModuleBuildings
         }
         
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             ApplyStationPart(ModuleParts_Central.StationParts[PartID]);
 
         }
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             base.OnCleanUp();
 

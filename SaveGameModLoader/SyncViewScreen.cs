@@ -13,13 +13,13 @@ namespace SaveGameModLoader
     {
         public System.Action RefreshAction;
         public bool LoadOnClose = false;
-        public override void OnDeactivate()
+        protected override void OnDeactivate()
         {
             base.OnDeactivate();
             UnityEngine.Object.Destroy(this);
         }
 
-        public override void OnActivate()
+        protected override void OnActivate()
         {
             var modScreen = this.transform;
             ///Set Title of Mod Sync Screen.

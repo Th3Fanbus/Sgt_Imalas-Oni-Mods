@@ -37,7 +37,7 @@ namespace Rockets_TinyYetBig.LandingLegs
         public SimHashes exhaustElement = SimHashes.CarbonDioxide;
 
         public GameObject landingPreview;
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             smi.StartSM();
         }

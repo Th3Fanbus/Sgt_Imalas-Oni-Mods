@@ -11,7 +11,7 @@ namespace KnastoronOniMods
     {
         int homeWorld;
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             homeWorld = this.GetMyWorldId();
         }

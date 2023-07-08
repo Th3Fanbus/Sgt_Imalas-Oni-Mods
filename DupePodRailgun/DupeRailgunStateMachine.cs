@@ -31,7 +31,7 @@ namespace DupePodRailgun
             return assignable.assignee.GetSoleOwner().GetComponent<MinionAssignablesProxy>().GetTargetGameObject().GetComponent<Navigator>();
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             assignable.OnAssign += new System.Action<IAssignableIdentity>(this.RedoAssignment);
             base.OnSpawn();
@@ -55,7 +55,7 @@ namespace DupePodRailgun
             //smi.GoTo(smi.sm.Idle);
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             base.OnCleanUp();
         }

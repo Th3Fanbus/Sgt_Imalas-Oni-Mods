@@ -296,7 +296,7 @@ namespace ShockWormMob
             mMound = mound;
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             base.smi.GoTo(base.smi.sm.grounded.idle);

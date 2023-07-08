@@ -11,13 +11,13 @@ namespace Rockets_TinyYetBig.Behaviours
     class RTB_PowerConsumerModule : EnergyConsumer 
     {
         private Clustercraft clustercraft;
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             return;
             this.IsVirtual= true;
             base.OnPrefabInit();
         }
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             return;
             CraftModuleInterface craftInterface = this.GetComponent<RocketModuleCluster>().CraftInterface;
@@ -53,7 +53,7 @@ namespace Rockets_TinyYetBig.Behaviours
         //        return BaseWattageRating;
         //    }
         //}
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             return;
             Game.Instance.energySim.RemoveEnergyConsumer(this);

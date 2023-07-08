@@ -53,7 +53,7 @@ namespace UtilLibs.UIcmp //Source: Aki
         }
 
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             UpdateLabel();

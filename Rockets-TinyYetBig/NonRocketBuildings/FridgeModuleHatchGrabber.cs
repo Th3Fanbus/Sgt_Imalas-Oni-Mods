@@ -36,7 +36,7 @@ namespace Rockets_TinyYetBig.NonRocketBuildings
 
         List<CargoBayCluster> ConnectedFridgeModules = new List<CargoBayCluster>();
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             this.GetMyWorld().TryGetComponent<CraftModuleInterface>(out craftModuleInterface);
@@ -72,13 +72,13 @@ namespace Rockets_TinyYetBig.NonRocketBuildings
         private List<int> refreshHandle = new List<int>();
         public float maxPullCapacityKG = 1f;
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit(); 
             this.filteredStorage = new FilteredStorage((KMonoBehaviour)this, (Tag[])null, (IUserControlledCapacity)null, false, Db.Get().ChoreTypes.StorageFetch);
 
         }
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             ModAssets.FridgeModuleGrabbers.Remove(this);
             craftModuleInterface.gameObject.Unsubscribe((int)GameHashes.RocketModuleChanged, UpdateModules);

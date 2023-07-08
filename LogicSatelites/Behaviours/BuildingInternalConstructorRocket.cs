@@ -99,7 +99,7 @@ namespace LogicSatellites.Behaviours
             }
 
 
-            public override void OnCleanUp()
+            protected override void OnCleanUp()
             {
                 Element element = (Element)null;
                 float mass = 0.0f;

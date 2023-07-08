@@ -632,7 +632,7 @@ namespace MineralizerReborn
             OutputStorage.Trigger(-1697596308, base.gameObject);
         }
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             Attributes attributes = base.gameObject.GetAttributes();
@@ -692,7 +692,7 @@ namespace MineralizerReborn
             base.smi.sm.canConvert.Set(flag, base.smi);
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             for (int i = 0; i < consumedElements.Length; i++)
@@ -710,7 +710,7 @@ namespace MineralizerReborn
             base.smi.StartSM();
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             for (int i = 0; i < consumedElements.Length; i++)
             {

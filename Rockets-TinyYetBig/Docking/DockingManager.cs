@@ -235,7 +235,7 @@ namespace Rockets_TinyYetBig.Behaviours
         }
 
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             ModAssets.Dockables.Add(this);
@@ -246,7 +246,7 @@ namespace Rockets_TinyYetBig.Behaviours
             SgtLogger.debuglog("AddedDockable");
 #endif
         }
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             ModAssets.Dockables.Remove(this);
             base.OnCleanUp();

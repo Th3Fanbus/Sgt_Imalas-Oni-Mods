@@ -18,7 +18,7 @@ namespace LightBridge.Buildings
 
         private bool isActive;
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             //simCellOccupier.doReplaceElement = false;
@@ -101,7 +101,7 @@ namespace LightBridge.Buildings
             isActive = active;
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             SetFloor(active: false);
             base.OnCleanUp();

@@ -28,7 +28,7 @@ namespace Rockets_TinyYetBig.NonRocketBuildings
         LogicPorts logicPorts;
 
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             this.smi.StartSM();
@@ -160,7 +160,7 @@ namespace Rockets_TinyYetBig.NonRocketBuildings
             UpdateLogicState();
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             base.OnCleanUp();
         }

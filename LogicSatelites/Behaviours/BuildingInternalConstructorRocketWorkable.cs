@@ -11,7 +11,7 @@ namespace LogicSatellites.Behaviours
     {
         private BuildingInternalConstructorRocket.Instance constructorInstance;
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             this.attributeConverter = Db.Get().AttributeConverters.ConstructionSpeed;
@@ -28,7 +28,7 @@ namespace LogicSatellites.Behaviours
             this.SetWorkTime(30f);
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             this.constructorInstance = this.GetSMI<BuildingInternalConstructorRocket.Instance>();

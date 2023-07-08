@@ -129,14 +129,14 @@ namespace Rockets_TinyYetBig.Behaviours
             this.GetComponent<KSelectable>().SetStatusItem(Db.Get().StatusItemCategories.Main, ModAssets.StatusItems.RTB_CritterModuleContent, (object)this);
         }
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             this.fetches = new List<FetchOrder2>();
             this.GetComponent<TreeFilterable>().OnFilterChanged += new System.Action<HashSet<Tag>>(this.OnFilterChanged);
             Prioritizable.AddRef(this.gameObject);
         }
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             this.Subscribe<CritterStasisChamberModule>(643180843, CritterStasisChamberModule.RefreshCreatureCountDelegate);

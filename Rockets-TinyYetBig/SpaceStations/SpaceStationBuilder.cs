@@ -174,12 +174,12 @@ namespace Rockets_TinyYetBig.SpaceStations
                 spaceStation._currentSpaceStationType = CurrentSpaceStationTypeInt;
             }
         }
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             this.GetComponent<RocketModuleCluster>().CraftInterface.GetComponent<Clustercraft>().Subscribe((int)GameHashes.ClusterLocationChanged, new System.Action<object>(this.ResetStation));
         }
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             this.GetComponent<RocketModuleCluster>().CraftInterface.GetComponent<Clustercraft>().Unsubscribe((int)GameHashes.ClusterLocationChanged, new System.Action<object>(this.ResetStation));
             base.OnCleanUp();

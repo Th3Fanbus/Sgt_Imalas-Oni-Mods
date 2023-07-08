@@ -25,11 +25,11 @@ namespace Rockets_TinyYetBig.SpaceStations.Construction.ModuleBuildings
 
         public string SidescreenButtonTooltip => "splits down the finished module into transportable parts.";///TODO STRING
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
         }
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             base.OnCleanUp();
 

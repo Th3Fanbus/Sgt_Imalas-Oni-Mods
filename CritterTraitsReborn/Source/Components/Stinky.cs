@@ -54,7 +54,7 @@ namespace CritterTraitsReborn.Components
 
         private static readonly HashedString[] WorkLoopAnims = new HashedString[3] { "working_pre", "working_loop", "working_pst" };
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             stinkyController = FXHelpers.CreateEffect("odor_fx_kanim", gameObject.transform.GetPosition(), smi.master.gameObject.transform, true);
             base.smi.StartSM();

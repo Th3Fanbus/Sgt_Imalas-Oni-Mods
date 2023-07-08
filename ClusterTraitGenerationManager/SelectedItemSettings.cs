@@ -697,7 +697,7 @@ namespace ClusterTraitGenerationManager
         }
 
 
-        public override void OnShow(bool show)
+        protected override void OnShow(bool show)
         {
             base.OnShow(show);
             if (!init)

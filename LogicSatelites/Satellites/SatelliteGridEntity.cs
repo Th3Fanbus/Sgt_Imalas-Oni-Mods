@@ -35,7 +35,7 @@ namespace LogicSatellites.Behaviours
                // symbolSwapSymbol = this.clusterAnimSymbolSwapSymbol
             }
         };
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             SetSatelliteName(ModAssets.GetSatelliteNameRandom());
@@ -65,12 +65,12 @@ namespace LogicSatellites.Behaviours
             
         }
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             ModAssets.Satellites.Remove(this);
             ModAssets.AdjazenzMatrixHolder.RemoveItemTFromGraph(this.Location);

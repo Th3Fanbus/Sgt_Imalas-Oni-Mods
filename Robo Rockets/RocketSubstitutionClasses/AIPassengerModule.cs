@@ -15,7 +15,7 @@ namespace RoboRockets
     {
         [Serialize]
         public bool variableSpeed = false;
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
 

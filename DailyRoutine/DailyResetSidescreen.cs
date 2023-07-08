@@ -66,7 +66,7 @@ namespace DailyRoutine
 
 
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             Debug.Log("Initiating Sidescreen Prefab");
 #if DEBUG
@@ -242,7 +242,7 @@ namespace DailyRoutine
         }
 
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             base.OnCleanUp();
         }

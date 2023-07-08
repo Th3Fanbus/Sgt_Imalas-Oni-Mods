@@ -58,7 +58,7 @@ namespace Rockets_TinyYetBig.SpaceStations
         }
 
         //public Sprite GetUISpriteAt(int i) => Def.GetUISpriteFromMultiObjectAnim(AnimConfigs[i].animFile);
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             //SgtLogger.debuglog("MY WorldID:" + SpaceStationInteriorId);
             if (SpaceStationInteriorId < 0)
@@ -111,7 +111,7 @@ namespace Rockets_TinyYetBig.SpaceStations
             UnityEngine.Object.Destroy(this.gameObject);
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             base.OnCleanUp();
         }

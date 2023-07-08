@@ -13,7 +13,7 @@ namespace Rockets_TinyYetBig.RocketFueling
         [MyCmpReq]
         private Building building;
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             foreach (var offset in building.Def.PlacementOffsets)
@@ -23,7 +23,7 @@ namespace Rockets_TinyYetBig.RocketFueling
             }
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             foreach (var offset in building.Def.PlacementOffsets)
             {

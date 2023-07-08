@@ -11,7 +11,7 @@ namespace AmogusMorb.TwitchEvents.TwitchEventAddons
     {
         [Serialize]
         Color CrewColour;
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             if(CrewColour == null)

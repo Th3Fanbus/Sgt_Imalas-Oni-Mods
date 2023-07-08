@@ -33,7 +33,7 @@ namespace UL_UniversalLyzer
         EnergyConsumer energyConsumer;
         [MyCmpGet]
         Building building;
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
 
             if (this.hasMeter)
@@ -50,7 +50,7 @@ namespace UL_UniversalLyzer
             Tutorial.Instance.oxygenGenerators.Add(this.gameObject);
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             Tutorial.Instance.oxygenGenerators.Remove(this.gameObject);
             base.OnCleanUp();

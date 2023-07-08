@@ -17,14 +17,14 @@ namespace CritterTraitsReborn.Components
         [Serialize]
         private bool appliedCritterTraits = false;
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             Traits.AllTraits.InitAllTraits();
             gameObject.Subscribe((int)GameHashes.SpawnedFrom, from => transferTraits(from as GameObject));
             gameObject.Subscribe((int)GameHashes.LayEgg, egg => transferTraits(egg as GameObject));
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             if (!appliedCritterTraits)
             {

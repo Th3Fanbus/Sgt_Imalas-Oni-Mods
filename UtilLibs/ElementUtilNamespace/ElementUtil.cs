@@ -124,7 +124,9 @@ namespace ElementUtilNamespace
             foreach (var elem in elements)
             {
                 SgtLogger.debuglog(elem.ToString() + " Ele "+ elem.SimHash.ToString()+" new tag : "+ TagManager.Create(elem.SimHash.ToString()+" substanceele? ")+elem+ ", "+ elem.Get());
-                elem.Get().substance.nameTag = TagManager.Create(elem.SimHash.ToString());
+
+                Traverse.Create(elem.Get().substance).Field("nameTag").SetValue(TagManager.Create(elem.SimHash.ToString()));
+                //elem.Get().substance.nameTag = TagManager.Create(elem.SimHash.ToString());
             }
         }
 

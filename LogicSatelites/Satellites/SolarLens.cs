@@ -16,7 +16,7 @@ namespace LogicSatellites.Satellites
 
 
         int OrbitWorldId = -1;
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             var asteroid = ClusterGrid.Instance.GetVisibleEntityOfLayerAtAdjacentCell(entity.Location, EntityLayer.Asteroid);

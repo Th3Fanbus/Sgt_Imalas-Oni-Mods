@@ -141,7 +141,7 @@ namespace Radiator_Mod
         }
 
         #region Spawn&Cleanup
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             inputCell = building.GetUtilityInputCell();
@@ -194,12 +194,12 @@ namespace Radiator_Mod
             }
 
         }
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             accumulator = Game.Instance.accumulators.Add("Flow", this);
         }
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             Conduit.GetFlowManager(type).RemoveConduitUpdater(ConduitUpdate);
             Game.Instance.accumulators.Remove(accumulator);

@@ -16,7 +16,7 @@ namespace Cryopod
         private Chore freezeChore;
 
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             this.assignable.OnAssign += new System.Action<IAssignableIdentity>(this.Assign);

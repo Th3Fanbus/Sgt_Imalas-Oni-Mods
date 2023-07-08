@@ -30,7 +30,7 @@ namespace BawoonFwiend
 
         public override bool IsValidForTarget(GameObject target) => target.GetComponent<Bawoongiver>() != null;
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             // the monument screen used here has 2 extra buttons that are not needed, disabling them
@@ -52,7 +52,7 @@ namespace BawoonFwiend
             //Game.Instance.Subscribe((int)GameHashes.ToggleSandbox, RefreshAll);
         }
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             InitLinks();

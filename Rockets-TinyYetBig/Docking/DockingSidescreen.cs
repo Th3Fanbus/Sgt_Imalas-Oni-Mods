@@ -15,7 +15,7 @@ namespace Rockets_TinyYetBig.Docking
     class DockingSidescreen : SideScreenContent
     {
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             // ListAllChildren(this.transform);
@@ -102,7 +102,7 @@ namespace Rockets_TinyYetBig.Docking
                 Util.KDestroyGameObject(broadcasterRow.Value);
             this.DockingTargets.Clear();
         }
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             titleKey = "STRINGS.UI_MOD.UISIDESCREENS.DOCKINGSIDESCREEN.TITLE";

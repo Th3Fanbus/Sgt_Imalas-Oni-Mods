@@ -16,7 +16,7 @@ namespace Rockets_TinyYetBig.Behaviours
 
         public bool UseLight = false;
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             this.smi.StartSM();
@@ -52,7 +52,7 @@ namespace Rockets_TinyYetBig.Behaviours
                 this.smi.master.flameLight.enabled = false;
         }
 
-        public override void OnCleanUp() => base.OnCleanUp();
+        protected override void OnCleanUp() => base.OnCleanUp();
 
         public class StatesInstance :
           GameStateMachine<ExtendedClusterModuleAnimator.States, ExtendedClusterModuleAnimator.StatesInstance, ExtendedClusterModuleAnimator, object>.GameInstance

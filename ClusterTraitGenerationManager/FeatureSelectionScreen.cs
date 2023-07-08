@@ -37,7 +37,7 @@ namespace ClusterTraitGenerationManager
         private LocText categoryHeaderLabel;
 
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             this.canBackoutWithRightClick = true;
@@ -120,7 +120,7 @@ namespace ClusterTraitGenerationManager
 
         public override float GetSortKey() => 20f;
 
-        public override void OnActivate() => this.OnShow(true);
+        protected override void OnActivate() => this.OnShow(true);
         public override void OnKeyDown(KButtonEvent e)
         {
             if (e.TryConsume(Action.Escape) || e.TryConsume(Action.MouseRight))
@@ -134,7 +134,7 @@ namespace ClusterTraitGenerationManager
 
 
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
         }
@@ -173,7 +173,7 @@ namespace ClusterTraitGenerationManager
             }
         }
 
-        public override void OnShow(bool show)
+        protected override void OnShow(bool show)
         {
             //SgtLogger.l("SHOWING: " + show);
             //this.isActive = show;
@@ -213,7 +213,7 @@ namespace ClusterTraitGenerationManager
             return;
         }
 
-        public override void OnCmpEnable()
+        protected override void OnCmpEnable()
         {
             base.OnCmpEnable();
             KleiItemsStatusRefresher.AddOrGetListener((Component)this).OnRefreshUI((System.Action)(() =>

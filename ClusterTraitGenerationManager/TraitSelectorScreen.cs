@@ -75,7 +75,7 @@ namespace ClusterTraitGenerationManager
 
             InitializeTraitContainer();
         }
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             this.ConsumeMouseScroll = true;

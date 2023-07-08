@@ -64,14 +64,14 @@ namespace Rockets_TinyYetBig.Behaviours
 
         public string SidescreenButtonTooltip => STRINGS.UI.ROCKETGENERATOR.TOOLTIP;
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
             this.connectedTags = new Tag[0];
             this.IsVirtual = true;
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             CraftModuleInterface craftInterface = this.GetComponent<RocketModuleCluster>().CraftInterface;
             this.VirtualCircuitKey = (object)craftInterface;
@@ -115,7 +115,7 @@ namespace Rockets_TinyYetBig.Behaviours
             }
             return returnVals;
         }
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             clustercraft.GetComponent<KSelectable>().RemoveStatusItem(FuelStatusHandle, true);
             base.OnCleanUp();

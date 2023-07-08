@@ -113,7 +113,7 @@ namespace Rockets_TinyYetBig.Behaviours
             {
                 m_fowManager = SaveGame.Instance.GetSMI<ClusterFogOfWarManager.Instance>();
             }
-            public override void OnCleanUp()
+            protected override void OnCleanUp()
             {
                 DestroyTelescope();
                 base.OnCleanUp();

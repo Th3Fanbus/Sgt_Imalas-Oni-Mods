@@ -48,7 +48,7 @@ namespace SaveGameModLoader
         }
 
         ColorStyleSetting missingModColorStyle;
-        public override void OnActivate()
+        protected override void OnActivate()
         {
             missingModColorStyle = (ColorStyleSetting)ScriptableObject.CreateInstance("ColorStyleSetting");
             missingModColorStyle.inactiveColor = new Color(0.7f, 0.25f, 0.25f);
