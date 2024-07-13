@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using ModProfileManager_Addon.API;
 using ModProfileManager_Addon.ModProfileData;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -26,12 +27,13 @@ namespace ModProfileManager_Addon
             spacedOut = 2,
             modPack = 3
         }
-
         public string ReferencedColonySaveName;
         public string ModlistPath;
         public bool IsModPack = false;
         public DLCType Type = 0;
-
+        private bool isClone = false;
+        public void SetClone(bool cl) => isClone = cl;
+        public bool IsClone() => isClone;
 
         public Dictionary<string, Dictionary<string, MPM_POptionDataEntry>> PlibModConfigSettings = new();
         public Dictionary<string, List<KMod.Label>> SavePoints = new();
@@ -116,10 +118,13 @@ namespace ModProfileManager_Addon
             return false;
         }
 
-
+        public string GetSerialized(bool indented = true)
+        {
+            return JsonConvert.SerializeObject(this, indented ? Formatting.Indented:Formatting.None);
+        }
         public void WriteModlistToFile()
         {
-            if (ModlistPath == null || ModlistPath == string.Empty || ModlistPath == ModAssets.TMP_PRESET)
+            if (ModlistPath == null || ModlistPath == string.Empty || ModlistPath == ModAssets.TMP_PRESET || isClone)
                 return;
 
             try
@@ -173,8 +178,8 @@ namespace ModProfileManager_Addon
             }
             else
             {
-                ReferencedColonySaveName = ModAssets.GetSanitizedNamePath(referencedColonySave);
-                ModlistPath = ModAssets.GetSanitizedNamePath(referencedColonySave);
+                ReferencedColonySaveName = SanitationUtils.GetSanitizedNamePath(referencedColonySave);
+                ModlistPath = SanitationUtils.GetSanitizedNamePath(referencedColonySave);
                 Type = DLCType.modPack;
             }
         }
@@ -309,7 +314,8 @@ namespace ModProfileManager_Addon
                     var mod = manager.mods.FirstOrDefault(m => m.staticID == modID);
                     if (mod == null)
                     {
-                        SgtLogger.warning(modID + " not found for writing config.");
+                        //SgtLogger.warning(modID + " not found for writing config.");
+                        Mod_API.ApplyCustomData(modID, modConfig.Value.ModConfigData);
                         continue;
                     }
 
@@ -357,6 +363,7 @@ namespace ModProfileManager_Addon
                     }
                 }
             }
+            Mod_API.PrepareDataForOnLoadApplication(modConfigEntries);
         }
 
         public Dictionary<string, MPM_POptionDataEntry> ReadPlibOptions()
@@ -427,7 +434,7 @@ namespace ModProfileManager_Addon
 
                     if (!File.Exists(configFilePath))
                     {
-                        SgtLogger.l("no Config file found for " + modID + " on path: " + configFilePath);
+                        //SgtLogger.l("no Config file found for " + modID + " on path: " + configFilePath);
                         continue;
                     }
                     try
@@ -437,7 +444,7 @@ namespace ModProfileManager_Addon
                         {
                             using (JsonTextReader reader = new JsonTextReader(file))
                             {
-                                SgtLogger.l(modID + "\n" + configFilePath, "FilePathToRead");
+                                //SgtLogger.l(modID + "\n" + configFilePath, "FilePathToRead");
                                 JObject data = (JObject)JToken.ReadFrom(reader);
                                 //SgtLogger.l(o2.ToString(), modID);
                                 ModConfigs.Add(modID, new MPM_POptionDataEntry(fileName, UseSharedConfigLocation, intentedFormat, data));
@@ -450,6 +457,7 @@ namespace ModProfileManager_Addon
                     }
                 }
             }
+            Mod_API.StoreData(ref ModConfigs);
             return ModConfigs;
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HarmonyLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using static ModProfileManager_Addon.SaveGameModList;
 
 namespace ModProfileManager_Addon.ModProfileData
 {
-    public class ModPresetEntry :  IEquatable<ModPresetEntry>
+    public class ModPresetEntry : IEquatable<ModPresetEntry>
     {
         public string Path;
         public SaveGameModList ModList;
@@ -26,6 +27,7 @@ namespace ModProfileManager_Addon.ModProfileData
 
             return result;
         }
+        public bool Clone => ModList!=null && ModList.IsClone();
         public Dictionary<string, MPM_POptionDataEntry> GetActivePlibConfig()
         {
             var result = new Dictionary<string, MPM_POptionDataEntry>();
@@ -37,15 +39,15 @@ namespace ModProfileManager_Addon.ModProfileData
         }
         public bool Equals(ModPresetEntry other)
         {
-            return other?.ModList?.ModlistPath == this.ModList.ModlistPath && other?.Path == this.Path;
+            return other?.ModList?.ModlistPath == this.ModList.ModlistPath && other?.Path == this.Path && other?.Clone == this.Clone;
         }
         public override bool Equals(object obj) => obj is ModPresetEntry other && Equals(other);
 
-        public static bool operator ==(ModPresetEntry a, ModPresetEntry b) => a?.ModList?.ModlistPath == b?.ModList?.ModlistPath && a?.Path == b?.Path;
+        public static bool operator ==(ModPresetEntry a, ModPresetEntry b) => a?.ModList?.ModlistPath == b?.ModList?.ModlistPath && a?.Path == b?.Path && b?.Clone == a?.Clone;
         public static bool operator !=(ModPresetEntry a, ModPresetEntry b) => !(a == b);
         public override int GetHashCode()
         {
-            return Path.GetHashCode() + ModList.ModlistPath.GetHashCode();
+            return Path.GetHashCode() + ModList.ModlistPath.GetHashCode() + ModList.IsClone().GetHashCode();
         }
     }
 }
